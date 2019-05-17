@@ -3,14 +3,12 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants
   def index
-    @restaurants = Restaurant.all
-
-    render json: @restaurants
+    @restaurants = Restaurant.includes(:reviews).order(:name)
   end
 
   # GET /restaurants/1
   def show
-    render json: @restaurant
+    render json: @restaurant.includes(:reviews)
   end
 
   # POST /restaurants

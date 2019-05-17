@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_05_17_150319) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name", default: "", null: false
-    t.string "type", default: "", null: false
+    t.string "cuisine", default: "", null: false
     t.text "description", default: "", null: false
     t.text "hero_image_url", default: "", null: false
     t.boolean "favorite", default: false, null: false
